@@ -123,5 +123,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# additional PATH locations
+export PATH="$PATH:~/.local/bin"
+
 # define GPG_TTY
 export GPG_TTY=$(tty)
