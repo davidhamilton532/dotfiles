@@ -128,3 +128,8 @@ export PATH="$PATH:~/.local/bin"
 
 # define GPG_TTY
 export GPG_TTY=$(tty)
+
+# k3s-ansible
+. <(k3s completion bash)  # Added by k3s-ansible
+export KUBECONFIG=~/.kube/config # Added by k3s-ansible
+. <(kubectl completion bash)  # Added by k3s-ansible
