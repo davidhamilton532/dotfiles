@@ -129,11 +129,14 @@ export PATH="$PATH:~/.local/bin"
 # define GPG_TTY
 export GPG_TTY=$(tty)
 
+# k3s-ansible
 if [ -f /usr/local/bin/k3s ]; then
-  . <(k3s completion bash)  # Added by k3s-ansible
-  export KUBECONFIG=~/.kube/config # Added by k3s-ansible
-  . <(kubectl completion bash)  # Added by k3s-ansible
-  if [ -f /usr/local/bin/flux ]; then
-    . <(flux completion bash)
-  fi
+. <(k3s completion bash)  # Added by k3s-ansible
+export KUBECONFIG=~/.kube/config # Added by k3s-ansible
+. <(kubectl completion bash)  # Added by k3s-ansible
+fi
+
+# fluxcd
+if [ -f /usr/local/bin/flux ]; then
+. <(flux completion bash)
 fi
